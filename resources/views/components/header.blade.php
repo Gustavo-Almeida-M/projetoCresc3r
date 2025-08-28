@@ -1,11 +1,10 @@
 <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
 <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"> </script>
 
-<header class="bg-gray-900">
+<header class="bg-gray-800">
   <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
     <div class="flex lg:flex-1">
       <a href="#" class="-m-1.5 p-1.5">
-        <span class="sr-only">Your Company</span>
         <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="" class="h-8 w-auto" />
       </a>
     </div>
@@ -18,9 +17,10 @@
       </button>
     </div>
     <el-popover-group class="hidden lg:flex lg:gap-x-12">
-      <a href="/" class="text-sm/6 font-semibold text-white">Início</a>
-      <a href="/sobre" class="text-sm/6 font-semibold text-white">Sobre</a>
-      <a href="/contato" class="text-sm/6 font-semibold text-white">Contato</a>
+      <x-nav-links href="/" :active="request()-> is ('/')">Início</x-nav-links>
+      <x-nav-links href="/sobre" :active="request()-> is ('sobre')">Sobre</x-nav-links>
+      <x-nav-links href="/contato" :active="request()-> is ('contato')">Contato</x-nav-links>
+      <x-nav-links type="button">Serviços</x-nav-links>
     </el-popover-group>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
       <a href="#" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span></a>
@@ -32,11 +32,9 @@
         <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
           <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
               <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="" class="h-8 w-auto" />
             </a>
             <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-400">
-              <span class="sr-only">Close menu</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
                 <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
